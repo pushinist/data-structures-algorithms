@@ -27,7 +27,7 @@ func bfs(graph [][]uint, start uint) []uint {
 	for len(queue) > 0 {
 		visited = append(visited, queue[0])
 		for _, v := range graph[visited[len(visited)-1]] {
-			if !contains(visited, v) {
+			if !contains(visited, v) && !contains(queue, v) {
 				queue = append(queue, v)
 			}
 		}
