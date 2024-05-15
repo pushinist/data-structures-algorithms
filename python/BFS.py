@@ -60,7 +60,7 @@ def print_shortest_distance(graph: list[list[int]], source: int, vertices: int) 
                     print(path[i])
 
 
-edges: list[list[int]] = convert_adjacency_matrix_to_matrix_list("adjacency_matrix")
+edges: list[list[int]] = convert_adjacency_matrix_to_matrix_list("../golang/adjacency_matrix")
 vertices: int = len(edges)
 graph: list[list[int]] = [[] for _ in range(vertices)]
 for edge in edges:

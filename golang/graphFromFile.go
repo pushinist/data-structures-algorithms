@@ -19,7 +19,7 @@ func graphFromFile(pathToFile string) [][]uint {
 		relations := strings.Fields(line)
 		for i, v := range relations {
 			number, _ := strconv.Atoi(v)
-			if number == 1 {
+			if number != 0 {
 				adjacencyList[vertice] = append(adjacencyList[vertice], uint(i))
 			}
 		}
