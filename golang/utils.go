@@ -98,11 +98,17 @@ func dfsGetComps(graph [][]uint) [][]uint {
 		}
 	}
 	components = append(components, component)
+Search:
 	for i := 1; i < len(graph); i++ {
 		if contains(visited, uint(i)) {
 			continue
 		}
 		component = dfs(graph, uint(i))
+		for _, value := range component {
+			if len(graph[value]) == 0 {
+				continue Search
+			}
+		}
 		for _, v := range component {
 			if !contains(visited, v) {
 				visited = append(visited, v)
